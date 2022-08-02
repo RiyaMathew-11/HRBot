@@ -1,0 +1,257 @@
+
+stories:
+- story: Scenario 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_welcome
+  - user: |
+      [Riya P Mathew]{"entity":"name"}
+    intent: tell_name
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      [bonafide certificate]{"entity":"bonafide"}
+    intent: tell_purpose
+  - action: utter_askpurpose_bonafide
+  - user: |
+      [Bank loans]{"entity":"purpose_bon"}
+    intent: tell_need
+  - action: purpose_form
+  - active_loop: purpose_form
+  - user: |
+      [satisfied]{"entity": "positive"}
+    intent: positive_feedback
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - user: |
+      thank you
+    intent: final
+  - action: utter_final
+
+- story: Scenario 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_welcome
+  - user: |
+      [Riya P Mathew]{"entity":"name"}
+    intent: tell_name
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      [boanfide certificate]{"entity":"bonafide"}
+    intent: tell_purpose
+  - action: utter_askpurpose_bonafide
+  - user: |
+      [Bank loans]{"entity":"purpose_bon"}
+    intent: tell_need
+  - action: purpose_form
+  - active_loop: purpose_form
+  - user: |
+      [not satisfied]{"entity": "negative"}
+  - action: negative_feedback_form
+  - active_loop: negative_feedback_form
+  - user: |
+      thank you
+    intent: final
+  - action: utter_final
+
+- story: Scenario 3
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_welcome
+  - user: |
+      [Riya P Mathew]{"entity":"name"}
+    intent: tell_name
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      [boanfide certificate]{"entity":"bonafide"}
+    intent: tell_purpose
+  - action: utter_askpurpose_bonafide
+  - user: |
+      [Bank loans]{"entity":"purpose_bon"}
+    intent: tell_need
+  - action: purpose_form
+  - active_loop: purpose_form
+  - user: |
+      [satisfied]{"entity": "positive"}
+    intent: positive_feedback
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - user: |
+      [policy related questions]{"entity": "policy"}
+    intent: tell_purpose
+  - action: utter_ask_policy
+  - user: |
+      maternity leave policy
+    intent: maternity_leave_policy
+  - action: utter_maternitypolicy
+  - user: |
+      [ok]{"entity": "confirm"}
+    intent: confirm
+  - action: utter_ask_feedback
+  - user: |
+      [satisfied]{"entity": "positive"}
+    intent: positive_feedback
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - user: |
+      thank you
+    intent: final
+  - action: utter_final
+
+- story: Scenario 4
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_welcome
+  - user: |
+      [Riya P Mathew]{"entity":"name"}
+    intent: tell_name
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      [policy related questions]{"entity": "policy"}
+    intent: tell_purpose
+  - action: utter_ask_policy
+  - user: |
+      leave balance
+    intent: leave_balance
+  - action: action_check_leavebalance
+  - user: |
+      [ok]{"entity": "confirm"}
+    intent: confirm
+  - action: utter_ask_feedback
+  - user: |
+      [satisfied]{"entity": "positive"}
+    intent: positive_feedback
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - user: |
+      thank you
+    intent: final
+  - action: utter_final
+
+- story: Scenario 5
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_welcome
+  - user: |
+      [Riya P Mathew]{"entity":"name"}
+    intent: tell_name
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      [policy related questions]{"entity": "policy"}
+    intent: tell_purpose
+  - action: utter_ask_policy
+  - user: |
+      leave balance
+    intent: leave_balance
+  - action: action_check_leavebalance
+  - user: |
+      [ok]{"entity": "confirm"}
+    intent: confirm
+  - action: utter_ask_feedback
+  - user: |
+      [not satisfied]{"entity": "negative"}
+    intent: negative_feedback
+  - action: negative_feedback_form
+  - active_loop: negative_feedback_form
+  - user: |
+      thank you
+    intent: final
+  - action: utter_final
+
+
+- story: Scenario 6
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_welcome
+  - user: |
+      [Riya P Mathew]{"entity":"name"}
+    intent: tell_name
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      [policy related questions]{"entity": "policy"}
+    intent: tell_purpose
+  - action: utter_ask_policy
+  - user: |
+      paternity leave policy
+    intent: paternity_leave_policy
+  - action: utter_paternitypolicy
+  - user: |
+      How do I apply for paternity leave ?
+    intent: paternity_leave_apply
+  - action: utter_paternityapply
+  - user: |
+      number of days for paternity leave
+    intent: paternity_leave_days
+  - action: utter_paternitydays
+  - user: |
+      tell me about earned leave policy
+    intent: earned_leave
+  - action: utter_earnedleave_policy
+  - user: |
+      [ok]{"entity": "confirm"}
+    intent: confirm
+  - action: utter_ask_feedback
+  - user: |
+      [satisfied]{"entity": "positive"}
+    intent: positive_feedback
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - user: |
+      thank you
+    intent: final
+  - action: utter_final
+
+- story: Scenario 7
+steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_welcome
+  - user: |
+      [Riya P Mathew]{"entity":"name"}
+    intent: tell_name
+  - action: name_form
+  - active_loop: name_form
+  - user: |
+      [policy related questions]{"entity": "policy"}
+    intent: tell_purpose
+  - action: utter_ask_policy
+  - user: |
+      sick leave policy
+    intent: sick_leave
+  - action: utter_sickleave_policy
+  - user: |
+      earned leave policy
+    intent: earned_leave
+  - action: utter_earnedleave_policy
+  - user: |
+      [alright]{"entity": "confirm"}
+    intent: confirm
+  - action: utter_ask_feedback
+  - user: |
+      [not satisfied]{"entity": "negative"}
+    intent: negative_feedback
+  - action: negative_feedback_form
+  - active_loop: negative_feedback_form
+  - user: |
+      thank you
+    intent: final
+  - action: utter_final
+

@@ -1,0 +1,21 @@
+<! DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.css" />
+  <title>HR Bot</title>
+</head>
+<body>
+  <div class="chat-container"></div>
+
+  <script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"/></script>
+  <script type="text/javascript">
+    var chatroom = new window.Chatroom({
+      host: "{{rasa_server}}",
+      title: "HR Bot with Rasa Open Source",
+      container: document.querySelector(".chat-container"),
+      welcomeMessage: "You could start conversing with me by saying hello !!"
+    });
+    chatroom.openChat();
+  </script>
+</body>
+</html>

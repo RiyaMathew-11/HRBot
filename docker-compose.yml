@@ -1,0 +1,35 @@
+version: '3.0'
+services:
+
+  rasa:
+    image: rasa/rasa:2.5.1-full
+    user: root
+    ports:
+      - 5005:5005
+    volumes:
+      - ./HRBot:/app
+    command:
+      - run
+      - --cors
+      - "*"
+
+
+  app:
+    image: rasa-actions
+    user: root
+    expose:
+      - 5055
+    ports:
+      - 5055:5055
+    environment:
+      - SENDGRID_API_KEY
+
+
+  web:
+    image: django_app
+    ports:
+      - 8000:8000
+    environment:
+      - DATABASE_URL
+      - SENDGRID_API_KEY
+      - RASA_SERVER

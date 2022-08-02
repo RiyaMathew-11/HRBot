@@ -1,0 +1,175 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+
+- intent: tell_purpose
+  examples: |
+    - I want to avail a [bonafide certificate]{"entity": "bonafide"}
+    - [bonafide certificate]{"entity": "bonafide"}
+    - I want to request for a [bonafide certificate]{"entity": "bonafide"}
+    - I want to ask [policy related queries]{"entity": "policy"}
+    - [policy related questions]{"entity": "policy"}
+    - i have some [policy related queries]{"entity": "policy"}
+
+- regex: name
+  examples: |
+    - ([A-Z][a-z]*)[\s-]([A-Z][a-z]*)
+
+- intent: tell_name
+  examples: |
+    - I am [Riya P Mathew]{"entity": "name"}
+    - [Riya P Mathew]{"entity": "name"}
+    - my name is [Reny John]{"entity": "name"}
+    - [Sara Joshy]{"entity": "name"}
+    - [Kevin Jacob]{"entity": "name"}
+    - I am [P Hyareen Linda]{"entity": "name"}
+
+- lookup: name
+  examples: |
+    - Ann Jose
+    - Anna Maria Jacob
+    - Abel Koshy
+    - Betty Susan
+    - C Derin John
+    - ...
+    - Zarin S T
+    - Z Merin Kent
+
+- intent: tell_need
+  examples: |
+    - I want to avail [bank loans]{"entity": "purpose_bon"}
+    - [bank loans]{"entity": "purpose_bon"}
+    - [house loans]{"entity": "purpose_bon"}
+    - [income tax filings]{"entity": "purpose_bon"}
+
+- intent: maternity_leave_policy
+  examples: |
+    - what is the maternity leave policy
+    - I want to know about the maternity leave policy
+    - tell me about maternity leave policy
+    - maternity leave policy
+    - leave for mothers
+    - leave policy for mothers
+
+- intent: maternity_leave_apply
+  examples: |
+    - how do i apply for maternity leave
+    - how to apply] for maternity leave
+    - what is the procedure to apply for maternity leave
+    - i need to apply for maternity leave
+    - apply for maternity leave
+    - how can new mothers apply for leave ?
+    - leave application for maternity
+    - how can mothers apply for leave ?
+
+- intent: maternity_leave_days
+  examples: |
+    - what is the count of days for maternity leave
+    - I want to know the number of days for maternity leave
+    - tell me the number of days for maternity leave
+    - number of days for maternity leave
+    - maternity leave days
+    - number of leaves to taken by mothers
+    - i am a new mother, how many days do i get for leave
+
+- intent: paternity_leave_policy
+  examples: |
+    - what is the paternity leave policy
+    - I want to know about the paternity leave policy
+    - tell me about paternity leave policy
+    - paternity leave policy
+    - leave policy for fathers
+    - leave for fathers
+    - i am a new father, what policy could help me
+
+- intent: paternity_leave_apply
+  examples: |
+    - how do i apply for paternity leave
+    - how to apply for paternity leave
+    - what is the procedure to apply for paternity leave
+    - i need to apply for paternity leave
+    - apply for paternity leave
+    - application of leave by fathers
+    - i am a new father, how do i apply for leave
+
+- intent: paternity_leave_days
+  examples: |
+    - what is the count of days for paternity leave
+    - I want to know the number of days for paternity leave
+    - tell me the number of days for paternity leave
+    - number of days for paternity leave
+    - paternity leave days
+    - i am a new father, how many days do i get leave
+
+- intent: earned_leave
+  examples: |
+    - tell me about earned leave policy
+    - earned leaves
+    - earned leave policy
+    - I want to know about earned leave policy
+    - what is earned leave policy
+
+- intent: sick_leave
+  examples: |
+    - tell me about sick leave policy
+    - sick leaves
+    - sick leave policy
+    - I want to know about sick leave policy
+    - what is sick leave policy
+    - i am not well, is there a policy
+    - i am unwell, is there a policy
+
+- intent: leave_balance
+  examples: |
+    - tell me about my leave balance
+    - what is my leave balance
+    - leave balance
+    - i want to know my leave balance
+    - how much leave do i have left
+
+- intent: positive_feedback
+  examples: |
+    - [satisfied]{"entity": "positive"}
+    - [happy]{"entity": "positive"}
+    - [very much]{"entity": "positive"}
+    - [yes]{"entity": "positive"}
+
+- intent: negative_feedback
+  examples: |
+    - [not satisfied]{"entity": "negative"}
+    - [could improve]{"entity": "negative"}
+    - [not at all]{"entity": "negative"}
+    - [no]{"entity": "negative"}
+
+- intent: confirm
+  examples: |
+    - [yes]{"entity": "confirm"}
+    - [ok]{"entity": "confirm"}
+    - [sure]{"entity": "confirm"}
+    - [alright]{"entity": "confirm"}
+    - [fine]{"entity": "confirm"}
+    - [yeah]{"entity": "confirm"}
+    - [of course]{"entity": "confirm"}
+
+- intent: ask_help
+  examples: |
+    - get me human help
+    - i want technical assistance
+    - connect me to technical help
+    - connect me with customer service
+    - get me technical help
+
+- intent: final
+  examples: |
+    - goodbye
+    - bye
+    - thankyou
+    - see you

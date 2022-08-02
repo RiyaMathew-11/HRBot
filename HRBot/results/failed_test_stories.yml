@@ -1,0 +1,219 @@
+version: "2.0"
+stories:
+- story: Scenario 1 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_welcome
+  - intent: tell_name
+    entities:
+    - name: Riya P Mathew
+  - slot_was_set:
+    - name: Riya P Mathew
+  - action: name_form
+  - active_loop: name_form
+  - intent: tell_purpose
+    entities:
+    - bonafide: bonafide certificate
+  - action: utter_askpurpose_bonafide
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: tell_need
+    entities:
+    - purpose_bon: Bank loans
+  - action: purpose_form
+  - active_loop: purpose_form
+  - intent: positive_feedback
+    entities:
+    - positive: satisfied
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - intent: final
+  - action: utter_final
+  - action: action_listen  # predicted: action_default_fallback
+- story: Scenario 2 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_welcome
+  - intent: tell_name
+    entities:
+    - name: Riya P Mathew
+  - slot_was_set:
+    - name: Riya P Mathew
+  - action: name_form
+  - active_loop: name_form
+  - intent: tell_purpose
+    entities:
+    - bonafide: boanfide certificate
+  - action: utter_askpurpose_bonafide
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: tell_need
+    entities:
+    - purpose_bon: Bank loans
+  - action: purpose_form
+  - active_loop: purpose_form
+  - user: |-
+      [not satisfied](negative)
+    entities:
+    - negative: not satisfied
+  - action: negative_feedback_form  # predicted: action_default_fallback
+  - active_loop: negative_feedback_form
+  - intent: final
+  - action: utter_final
+  - action: action_listen  # predicted: action_default_fallback
+- story: Scenario 3 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_welcome
+  - intent: tell_name
+    entities:
+    - name: Riya P Mathew
+  - slot_was_set:
+    - name: Riya P Mathew
+  - action: name_form
+  - active_loop: name_form
+  - intent: tell_purpose
+    entities:
+    - bonafide: boanfide certificate
+  - action: utter_askpurpose_bonafide
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: tell_need
+    entities:
+    - purpose_bon: Bank loans
+  - action: purpose_form
+  - active_loop: purpose_form
+  - intent: positive_feedback
+    entities:
+    - positive: satisfied
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - intent: tell_purpose
+    entities:
+    - policy: policy related questions
+  - action: utter_ask_policy
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: maternity_leave_policy
+  - action: utter_maternitypolicy
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: confirm
+    entities:
+    - confirm: ok
+  - slot_was_set:
+    - confirm: ok
+  - action: utter_ask_feedback
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: positive_feedback
+    entities:
+    - positive: satisfied
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - intent: final
+  - action: utter_final
+  - action: action_listen  # predicted: action_default_fallback
+- story: Scenario 4 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_welcome
+  - intent: tell_name
+    entities:
+    - name: Riya P Mathew
+  - slot_was_set:
+    - name: Riya P Mathew
+  - action: name_form
+  - active_loop: name_form
+  - intent: tell_purpose
+    entities:
+    - policy: policy related questions
+  - action: utter_ask_policy
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: leave_balance
+  - action: action_check_leavebalance
+  - intent: confirm
+    entities:
+    - confirm: ok
+  - slot_was_set:
+    - confirm: ok
+  - action: utter_ask_feedback
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: positive_feedback
+    entities:
+    - positive: satisfied
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - intent: final
+  - action: utter_final
+  - action: action_listen  # predicted: action_default_fallback
+- story: Scenario 5 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_welcome
+  - intent: tell_name
+    entities:
+    - name: Riya P Mathew
+  - slot_was_set:
+    - name: Riya P Mathew
+  - action: name_form
+  - active_loop: name_form
+  - intent: tell_purpose
+    entities:
+    - policy: policy related questions
+  - action: utter_ask_policy
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: leave_balance
+  - action: action_check_leavebalance
+  - intent: confirm
+    entities:
+    - confirm: ok
+  - slot_was_set:
+    - confirm: ok
+  - action: utter_ask_feedback
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: negative_feedback
+    entities:
+    - negative: not satisfied
+  - action: negative_feedback_form
+  - active_loop: negative_feedback_form
+  - intent: final
+  - action: utter_final
+  - action: action_listen  # predicted: action_default_fallback
+- story: Scenario 6 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_welcome
+  - intent: tell_name
+    entities:
+    - name: Riya P Mathew
+  - slot_was_set:
+    - name: Riya P Mathew
+  - action: name_form
+  - active_loop: name_form
+  - intent: tell_purpose
+    entities:
+    - policy: policy related questions
+  - action: utter_ask_policy
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: paternity_leave_policy
+  - action: utter_paternitypolicy
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: paternity_leave_apply
+  - action: utter_paternityapply
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: paternity_leave_days
+  - action: utter_paternitydays
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: earned_leave
+  - action: utter_earnedleave_policy
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: confirm
+    entities:
+    - confirm: ok
+  - slot_was_set:
+    - confirm: ok
+  - action: utter_ask_feedback
+  - action: action_listen  # predicted: action_default_fallback
+  - intent: positive_feedback
+    entities:
+    - positive: satisfied
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+  - intent: final
+  - action: utter_final
+  - action: action_listen  # predicted: action_default_fallback

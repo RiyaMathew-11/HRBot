@@ -1,0 +1,159 @@
+version: "2.0"
+
+rules:
+
+- rule: welcome user
+  conversation_start: true  # this rule only applies at the beginning of a conversation
+  steps:
+    - intent: greet
+    - action: utter_welcome
+
+- rule: Always get help when asked
+  steps:
+  - intent: ask_help
+  - action: utter_give_assistance
+
+- rule: Ask for feedback if confirmed
+  steps:
+  - intent: confirm
+  - action: utter_ask_feedback
+
+- rule: Say final statement at end
+  steps:
+  - intent: final
+  - action: utter_final
+
+- rule: Activate name form
+  steps:
+  - intent: tell_name
+  - action: name_form
+  - active_loop: name_form
+
+- rule: Submit name form
+  condition:
+    - active_loop: name_form
+  steps:
+    - action: name_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: action_search_name
+
+- rule: Activate purpose form
+  steps:
+  - intent: tell_need
+  - action: purpose_form
+  - active_loop: purpose_form
+
+- rule: Submit purpose form
+  condition:
+    - active_loop: purpose_form
+  steps:
+    - action: purpose_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: action_send_email
+    - action: utter_ask_feedback
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+
+- rule: Activate positive feedback form
+  steps:
+  - intent: positive_feedback
+  - action: positive_feedback_form
+  - active_loop: positive_feedback_form
+
+- rule: Submit positive feedback form
+  condition:
+    - active_loop: positive_feedback_form
+  steps:
+    - action: positive_feedback_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: action_handle_feedback
+
+- rule: Activate negative feedback form
+  steps:
+  - intent: negative_feedback
+  - action: negative_feedback_form
+  - active_loop: negative_feedback_form
+
+- rule: Submit negative feedback form
+  condition:
+    - active_loop: negative_feedback_form
+  steps:
+    - action: negative_feedback_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: action_handle_feedback
+
+
+# Rules related to policy queries
+
+- rule: Ask about maternity leave policy
+  steps:
+    - intent: maternity_leave_policy
+    - action: utter_maternitypolicy
+
+- rule: Ask about maternity leave application
+  steps:
+    - intent: maternity_leave_apply
+    - action: utter_maternityapply
+
+- rule: Ask about maternity leave tenure
+  steps:
+    - intent: maternity_leave_days
+    - action: utter_maternitydays
+
+- rule: Ask about paternity leave policy
+  steps:
+    - intent: paternity_leave_policy
+    - action: utter_paternitypolicy
+
+- rule: Ask about paternity leave application
+  steps:
+    - intent: paternity_leave_apply
+    - action: utter_paternityapply
+
+- rule: Ask about paternity leave tenure
+  steps:
+    - intent: paternity_leave_days
+    - action: utter_paternitydays
+
+- rule: Ask about earned leaves
+  steps:
+    - intent: earned_leave
+    - action: utter_earnedleave_policy
+
+- rule: Ask about paternity leave tenure
+  steps:
+    - intent: sick_leave
+    - action: utter_sickleave_policy
+
+- rule: Ask about leave balance
+  steps:
+    - intent: leave_balance
+    - action: action_check_leavebalance
+
+# Defining rules for different use-case
+
+- rule: Bonafide certificate
+  steps:
+    - intent: tell_purpose
+      entities:
+      - bonafide: "bonafide certificate"
+    - action: utter_askpurpose_bonafide
+
+- rule: Policy Related Queries
+  steps:
+    - intent: tell_purpose
+      entities:
+        - policy: "policy related query"
+    - action: utter_ask_policy
+

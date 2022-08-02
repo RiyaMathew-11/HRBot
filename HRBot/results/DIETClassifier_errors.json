@@ -1,0 +1,23 @@
+[
+  {
+    "text": "yes",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "yes",
+        "entity": "confirm"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "positive",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.5684782862663269,
+        "value": "yes",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

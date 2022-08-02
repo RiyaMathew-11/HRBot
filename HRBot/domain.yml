@@ -1,0 +1,150 @@
+version: "2.0"
+
+intents:
+  - greet
+  - tell_purpose
+  - tell_name
+  - tell_need
+  - maternity_leave_policy
+  - maternity_leave_apply
+  - maternity_leave_days
+  - paternity_leave_policy
+  - paternity_leave_apply
+  - paternity_leave_days
+  - earned_leave
+  - sick_leave
+  - leave_balance
+  - give_name
+  - positive_feedback
+  - negative_feedback
+  - confirm
+  - ask_help
+  - final
+
+entities:
+  - bonafide
+  - policy
+  - name
+  - purpose_bon
+  - positive
+  - negative
+  - confirm
+
+responses:
+  utter_welcome:
+  - text: "Hello, I am an HR Bot. Before proceeding on, I would like to authenticate your name.\n
+           Kindly provide your name please."
+
+  utter_askpurpose_bonafide:
+   - text: "The request for bonafide certificate will be forwarded to your\n
+            HR Manager.\n
+            Kindly provide me with the purpose."
+
+  utter_ask_policy:
+    - text: "I can help you with queries related to the different aspects of leave policy :\n
+             - maternity leave\n
+             - paternity leave\n
+             - sick leave\n
+             - earned leave\n
+             - leave balance"
+
+  utter_maternitypolicy:
+    - text: "Company gives leave to female employees for a maximum 26
+             weeks as per maternity benefit act 1961."
+
+  utter_maternityapply:
+    - text: "All employees have been allotted a leave card which shall be retained / maintained by the HR Department.
+             An employees availing leave shall submit a leave application for getting his leave sanctioned and forward the same to the HR for regularization.
+             All the leaves shall be sanctioned by immediate superior."
+
+  utter_maternitydays:
+    - text: "26 weeks of leave "
+
+  utter_paternitypolicy:
+    - text: "The company provides leave to male employees on the birth of child.
+             Eligibility : Maximum 3 days for confirmed staff, two times in career span."
+
+  utter_paternityapply:
+    - text: "All employees have been allotted a leave card which shall be retained / maintained by the HR Department.
+             An employees availing leave shall submit a leave application for getting his leave sanctioned and forward the same to the HR for regularization.
+             All the leaves shall be sanctioned by immediate superior."
+
+  utter_paternitydays:
+   - text: "Maximum 3 days for confirmed staff, two times in career span."
+
+  utter_ask_feedback:
+  - text: "Are you satisfied with my service ?\n
+           - satisfied\n
+           - not satisfied "
+
+  utter_earnedleave_policy:
+    - text: "An employee is eligible for Earned Leaves if he/she fulfill the condition of
+             attendance of 240 days in a year."
+
+  utter_sickleave_policy:
+    - text: "All employees including trainees shall be entitled to 5 days of SL in a year.
+             Employees joining any time during the leave year will have pro-rata SL for that year of joining."
+
+  utter_leavebalance:
+    - text: "Your leave balance is {leave_bal}"
+
+  utter_ask_forassistance:
+  - text: "I am sorry for that !
+           Do you want me to refer you to technical assistance ?"
+
+  utter_give_assistance:
+  - text: "Kindly mail at hrbot.gmail.com. You will be followed up"
+
+  utter_ask_anythingelse:
+  - text: "Please mention anything else that you want me to do, if any."
+
+  utter_thank_you:
+  - text: "Thank you for availing my service !"
+
+  utter_final:
+    - text: "Happy to be of service to you !!"
+
+  utter_default:
+    - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
+
+forms:
+  name_form:
+    name:
+      - type: from_entity
+        entity: name
+  purpose_form:
+    purpose:
+      - type: from_entity
+        entity: purpose_bon
+  positive_feedback_form:
+    feedback:
+      - type: from_entity
+        entity: positive
+  negative_feedback_form:
+    feedback:
+      - type: from_entity
+        entity: negative
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+  purpose:
+    type: text
+    influence_conversation: false
+  feedback:
+    type: text
+    influence_conversation: false
+  confirm:
+    type: text
+    influence_conversation: false
+
+actions:
+  - action_search_name
+  - action_send_email
+  - action_handle_feedback
+  - action_check_leavebalance
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

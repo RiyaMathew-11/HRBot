@@ -1,0 +1,10 @@
+[
+  {
+    "text": "yes",
+    "intent": "positive_feedback",
+    "intent_prediction": {
+      "name": "confirm",
+      "confidence": 0.4995701313018799
+    }
+  }
+]

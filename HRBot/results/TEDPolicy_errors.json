@@ -1,0 +1,207 @@
+[
+  {
+    "text": "bonafide certificate",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "bonafide certificate",
+        "entity": "bonafide"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Bank loans",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Bank loans",
+        "entity": "purpose_bon"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "satisfied",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "satisfied",
+        "entity": "positive"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "boanfide certificate",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "boanfide certificate",
+        "entity": "bonafide"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Bank loans",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Bank loans",
+        "entity": "purpose_bon"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "not satisfied",
+    "entities": [
+      {
+        "text": "not satisfied",
+        "start": 0,
+        "end": 13,
+        "entity": "negative",
+        "value": "not satisfied"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "boanfide certificate",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "boanfide certificate",
+        "entity": "bonafide"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Bank loans",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Bank loans",
+        "entity": "purpose_bon"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "satisfied",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "satisfied",
+        "entity": "positive"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "policy related questions",
+    "entities": [
+      {
+        "start": 0,
+        "end": 24,
+        "value": "policy related questions",
+        "entity": "policy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "satisfied",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "satisfied",
+        "entity": "positive"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "policy related questions",
+    "entities": [
+      {
+        "start": 0,
+        "end": 24,
+        "value": "policy related questions",
+        "entity": "policy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "satisfied",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "satisfied",
+        "entity": "positive"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "policy related questions",
+    "entities": [
+      {
+        "start": 0,
+        "end": 24,
+        "value": "policy related questions",
+        "entity": "policy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "not satisfied",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "not satisfied",
+        "entity": "negative"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "policy related questions",
+    "entities": [
+      {
+        "start": 0,
+        "end": 24,
+        "value": "policy related questions",
+        "entity": "policy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "satisfied",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "satisfied",
+        "entity": "positive"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

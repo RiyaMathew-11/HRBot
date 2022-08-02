@@ -1,0 +1,98 @@
+version: "2.0"
+
+stories:
+
+
+- story: Ask for bonafide certificate
+  steps:
+    - intent: tell_name
+    - action: name_form
+    - active_loop: name_form
+    - intent: tell_purpose
+      entities:
+        - bonafide: "bonafide certificate"
+    - action: utter_askpurpose_bonafide
+    - intent: tell_need
+    - action: purpose_form
+    - active_loop: purpose_form
+
+
+- story: Handle positive feedback
+  steps:
+    - intent: positive_feedback
+    - action: positive_feedback_form
+    - active_loop: positive_feedback_form
+
+- story: Handle negative feedback
+  steps:
+   - intent: negative_feedback
+   - action: negative_feedback_form
+   - active_loop: negative_feedback_form
+
+- story: Ask policy related query
+  steps:
+    - intent: greet
+    - action: utter_welcome
+    - intent: tell_name
+    - action: name_form
+    - active_loop: name_form
+    - intent: tell_purpose
+      entities:
+        - policy: "policy related query"
+    - action: utter_ask_policy
+
+
+- story: Mixed Scenario 1 # Bonafide certificate and policy related queries with positive feedback
+  steps:
+    - intent: tell_name
+    - action: name_form
+    - active_loop: name_form
+    - intent: tell_purpose
+      entities:
+        - bonafide: "bonafide certificate"
+    - action: utter_askpurpose_bonafide
+    - intent: tell_need
+    - action: purpose_form
+    - active_loop: purpose_form
+    - intent: tell_purpose
+      entities:
+        - policy: "policy related query"
+    - action: utter_ask_policy
+    - intent: maternity_leave_days
+    - action: utter_maternitydays
+    - intent: earned_leave
+    - action: utter_earnedleave_policy
+    - intent: confirm
+    - action: utter_ask_feedback
+    - intent: positive_feedback
+    - action: positive_feedback_form
+    - active_loop: positive_feedback_form
+    - intent: final
+    - action: utter_final
+
+- story: Mixed Scenario 2 # Bonafide certificate and policy related queries with negative feedback
+  steps:
+    - intent: tell_name
+    - action: name_form
+    - active_loop: name_form
+    - intent: tell_purpose
+      entities:
+        - policy: "policy related query"
+    - action: utter_ask_policy
+    - intent: leave_balance
+    - action: action_check_leavebalance
+    - intent: tell_purpose
+      entities:
+        - bonafide: "bonafide certificate"
+    - action: utter_askpurpose_bonafide
+    - intent: tell_need
+    - action: purpose_form
+    - intent: confirm
+    - action: utter_ask_feedback
+    - intent: negative_feedback
+    - action: negative_feedback_form
+    - active_loop: negative_feedback_form
+    - intent: final
+    - action: utter_final
+
+
